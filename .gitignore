@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Jarvis specific
+config/config.yaml
+data/collected/*
+!data/collected/.gitkeep
