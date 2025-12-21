@@ -82,8 +82,8 @@ class BaseCollector(ABC):
         Returns:
             True if configuration is valid, False otherwise
         """
-        if not self.config:
-            self.logger.error("Configuration is empty")
+        if not self.config or (isinstance(self.config, dict) and not self.config):
+            self.logger.error("Configuration is empty or invalid")
             return False
         
         return True

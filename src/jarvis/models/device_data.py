@@ -46,7 +46,9 @@ class DeviceData:
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'DeviceData':
         """Create a DeviceData instance from a dictionary."""
-        timestamp_str = data.get('timestamp')
+        # Create a copy to avoid mutating the input dictionary
+        data_copy = data.copy()
+        timestamp_str = data_copy.get('timestamp')
         if timestamp_str:
-            data['timestamp'] = datetime.fromisoformat(timestamp_str)
-        return cls(**data)
+            data_copy['timestamp'] = datetime.fromisoformat(timestamp_str)
+        return cls(**data_copy)
