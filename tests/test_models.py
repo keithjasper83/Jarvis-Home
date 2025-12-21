@@ -48,11 +48,12 @@ class TestDeviceData(unittest.TestCase):
     
     def test_device_data_from_dict(self):
         """Test creating DeviceData from dictionary."""
+        fixed_time = datetime(2024, 1, 1, 12, 0, 0)
         data_dict = {
             'device_id': 'test_device_1',
             'device_type': 'test',
             'device_name': 'Test Device',
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': fixed_time.isoformat(),
             'data': {'key': 'value'},
             'status': 'online',
             'metadata': {}
@@ -63,6 +64,7 @@ class TestDeviceData(unittest.TestCase):
         self.assertEqual(data.device_id, 'test_device_1')
         self.assertEqual(data.device_type, 'test')
         self.assertIsInstance(data.timestamp, datetime)
+        self.assertEqual(data.timestamp, fixed_time)
 
 
 if __name__ == '__main__':

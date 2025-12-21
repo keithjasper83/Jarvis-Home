@@ -11,10 +11,6 @@ import time
 from typing import Dict, List
 from datetime import datetime
 
-# Add src directory to path for imports
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
 from jarvis.config.config_manager import ConfigManager
 from jarvis.data_collectors.base_collector import BaseCollector
 from jarvis.data_collectors.shelly_collector import ShellyCollector

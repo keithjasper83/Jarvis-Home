@@ -76,6 +76,9 @@ class BaseCollector(ABC):
         """
         Validate the collector configuration.
         
+        Subclasses should override this method to add specific validation
+        for their required configuration parameters.
+        
         Returns:
             True if configuration is valid, False otherwise
         """
@@ -83,5 +86,4 @@ class BaseCollector(ABC):
             self.logger.error("Configuration is empty")
             return False
         
-        # Subclasses should override this method to add specific validation
         return True

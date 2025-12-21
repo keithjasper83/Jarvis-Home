@@ -58,9 +58,9 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. Install the package:
 ```bash
-pip install -r requirements.txt
+pip install -e .
 ```
 
 4. Configure environment variables:
@@ -80,8 +80,15 @@ Edit `config/config.yaml` to add your device credentials and preferences.
 
 ### Running
 
+After installation, you can run Jarvis using either:
+
 ```bash
-python src/jarvis/main.py
+jarvis
+```
+
+Or directly with Python:
+```bash
+python -m jarvis.main
 ```
 
 ## Features
