@@ -4,11 +4,9 @@
 # To make this agent available, merge this file into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:review-governor
-description:Continuous repository review agent enforcing Master Spec alignment, architecture integrity, documentation, and changelog discipline for all PRs and commits.
+name: review-governor
+description: Continuous repository review agent enforcing Master Spec alignment, architecture integrity, documentation, and changelog discipline for all PRs and commits.
 ---
-
-# My Agent
 
 # Copilot Custom Agent — Review Governor
 
