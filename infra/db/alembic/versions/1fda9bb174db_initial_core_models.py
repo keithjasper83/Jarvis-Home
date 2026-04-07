@@ -1,8 +1,8 @@
 """Initial core models
 
-Revision ID: 514b7349ef80
+Revision ID: 1fda9bb174db
 Revises:
-Create Date: 2026-04-07 21:32:27.525719
+Create Date: 2026-04-07 22:07:50.779465
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '514b7349ef80'
+revision: str = '1fda9bb174db'
 down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
