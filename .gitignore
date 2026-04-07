@@ -208,3 +208,5 @@ __marimo__/
 
 # Generated artifacts (produce on demand via scripts/)
 parsed_sections.json
+*.db
+*.sqlite

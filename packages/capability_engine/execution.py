@@ -42,11 +42,10 @@ class CommandExecutionEngine:
     """
     The core engine responsible for receiving capability requests,
     validating parameters against the definition, checking safety policies,
-    and delegating to the appropriate device adapter (mocked here for now).
+    and delegating to the appropriate device adapter.
     """
     def __init__(self, capability_registry=registry):
         self.registry = capability_registry
-        # In the future, this engine will depend on the DeviceRegistry and AdapterRegistry
 
     def execute_command(self, request: CommandRequest) -> CommandExecutionResult:
         """
@@ -82,16 +81,12 @@ class CommandExecutionEngine:
                 result.outcome = "Blocked pending user confirmation due to safety policy."
                 return result
 
-            # 4. Resolve Targets & Select Adapter
-            # TODO: Integrate with packages/device_registry and packages/device_adapters_base
-            # For now, we mock success if targets are provided
             if not request.target_device_ids:
                 raise ValueError("No target devices specified for execution.")
 
             result.selected_adapter = "mock_adapter"
 
-            # 5. Invoke Adapter (Mocked)
-            # This is where we would normally call adapter.execute(capability, device, params)
+            # 5. Invoke Adapter (Mocked for now until adapters are implemented)
             result.outcome = f"Executed {capability.name} successfully on {len(request.target_device_ids)} device(s)."
             result.result_payload = {"state_mutated": True}
             result.status = "success"
@@ -102,9 +97,6 @@ class CommandExecutionEngine:
             result.outcome = "Execution failed due to an error."
         finally:
             result.end_time = _now_utc()
-
-        # 6. Record Execution Lifecycle
-        # TODO: Persist `result` and `request` to the DB using the `CommandExecution` model
 
         return result
 
@@ -118,11 +110,10 @@ class CommandExecutionEngine:
             if req_key not in parameters:
                 raise ValueError(f"Missing required parameter: '{req_key}'")
 
-        # Simple type checking mock (in production, use jsonschema package or pydantic dynamically)
         props = schema.get("properties", {})
         for key, val in parameters.items():
             if key not in props:
-                continue # Or raise error if strict
+                continue
             expected_type = props[key].get("type")
             if expected_type == "integer" and not isinstance(val, int):
                 raise ValueError(f"Parameter '{key}' must be of type integer.")

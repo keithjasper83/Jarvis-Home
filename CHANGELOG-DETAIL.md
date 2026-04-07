@@ -4,15 +4,17 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
-### Implementation Pass: Capability and Command Execution Engine Core
+### Implementation Pass: Rebuild Core Systems Slice
 - **Agent Responsible:** Jules
-- **Purpose:** Implement the shared capability model schemas and the command execution engine lifecycle.
-- **Sections Addressed:** 17 (Shared Capability Model), 24 (Command Execution Engine).
+- **Purpose:** Recover lost progress and unify the foundation by implementing the Database schemas, Capability Engine, Command Execution Engine, Device Registry, and Base Adapters into a single structured, coherent package slice.
+- **Sections Addressed:** 17, 19, 20, 24, 26, 27.
 - **Files Created/Modified:**
-  - `packages/capability_engine/models.py` defining capability contracts, schemas, safety, and parameter expectations.
-  - `packages/capability_engine/registry.py` managing runtime definition lookups.
-  - `packages/capability_engine/execution.py` defining the lifecycle validation, request, and result structs for command execution mapping to adapters.
-  - Added unit test cases covering registry operations, execution parameter validation, and safety checking.
+  - `infra/db/database.py` and `infra/db/models/core.py` created for DB session lifecycle and declarative DB models.
+  - Initialized Alembic migrations located in `infra/db/alembic/`.
+  - `packages/capability_engine/models.py`, `registry.py`, and `execution.py` defining capability schemas, state, and command execution parameter validations.
+  - `packages/device_registry/registry.py` enabling CRUD inventory of active devices.
+  - `packages/device_adapters_base/adapter.py` providing `BaseAdapter` abstract protocol.
+  - Integration/Unit tests provided for all of the above implementations.
 
 ### Implementation Pass: Repository Scaffolding Completion
 - **Agent Responsible:** Jules

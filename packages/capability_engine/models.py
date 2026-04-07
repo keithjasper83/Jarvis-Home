@@ -48,27 +48,3 @@ class CapabilityDefinition(BaseModel):
     voice_examples: List[str] = Field(default_factory=list)
     ui_rendering_hints: Dict[str, Any] = Field(default_factory=dict)
     adapter_compatibility: List[str] = Field(default_factory=list)
-
-    model_config = {
-        "json_schema_extra": {
-            "example": {
-                "capability_id": "light.set_brightness",
-                "name": "Set Light Brightness",
-                "description": "Adjusts the brightness level of a lighting device.",
-                "category": "lighting",
-                "target_device_types": ["light"],
-                "safety_level": "moderate",
-                "default_confirmation_policy": "none",
-                "execution_contract": {
-                    "parameters_schema": {
-                        "type": "object",
-                        "properties": {
-                            "level": {"type": "integer", "minimum": 0, "maximum": 100}
-                        },
-                        "required": ["level"]
-                    }
-                },
-                "voice_examples": ["Set the brightness to 50 percent", "Dim the lights"]
-            }
-        }
-    }

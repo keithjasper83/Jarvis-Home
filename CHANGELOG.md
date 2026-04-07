@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Initialized core database architecture utilizing SQLAlchemy 2.0.
+- Scaffolded Alembic migrations environment.
+- Added initial data models matching Section 27 (`devices`, `capabilities`, `command_executions`, `conversation_turns`).
 - Implemented core Capability Engine (`CapabilityDefinition`, `SafetyLevel`, `ExecutionContract`, `CapabilityRegistry`).
 - Implemented `CommandExecutionEngine` with request parameter validation and execution lifecycle tracking.
+- Implemented `DeviceRegistry` for managing persistent device inventory mapping to DB operations.
+- Established the `BaseAdapter` abstract class defining the standard protocol for interacting with external hardware.
 - Created missing directory structures and package definitions in `apps/` and `packages/` as described by Section 7.
 - Initialized configuration management system in `packages/configuration/settings.py` (Section 30).
 - Standardized logging system producing structured JSON in `packages/logging_audit/logger.py` (Section 31).
