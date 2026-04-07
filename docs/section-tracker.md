@@ -8,7 +8,7 @@
 | 4 | EXPLICITLY FORBIDDEN OR DISCOURAGED | Unstarted | |
 | 5 | CORE USER EXPERIENCE TARGET | Unstarted | |
 | 6 | SYSTEM ARCHITECTURE OBJECTIVE | Unstarted | |
-| 7 | RECOMMENDED PROJECT / PACKAGE STRUCTURE | Unstarted | |
+| 7 | RECOMMENDED PROJECT / PACKAGE STRUCTURE | Started | Scaffolding for recommended app and package boundaries complete. |
 | 8 | TECHNOLOGY CHOICES | Unstarted | |
 | 9 | UI / WEB INTERFACE REQUIREMENTS | Unstarted | |
 | 10 | REQUIRED PAGE MAP | Unstarted | |
@@ -31,8 +31,8 @@
 | 27 | EXAMPLE DATABASE ENTITY DETAIL | Unstarted | |
 | 28 | API DESIGN REQUIREMENTS | Unstarted | |
 | 29 | AUTHENTICATION / AUTHORIZATION | Unstarted | |
-| 30 | CONFIGURATION AND SECRETS | Unstarted | |
-| 31 | LOGGING, AUDIT, EVENTS, AND OBSERVABILITY | Unstarted | |
+| 30 | CONFIGURATION AND SECRETS | Started | Added tiered configuration model using Python dataclasses |
+| 31 | LOGGING, AUDIT, EVENTS, AND OBSERVABILITY | Started | Created initial JSON logger utility. |
 | 32 | HEALTH MODEL | Unstarted | |
 | 33 | BACKGROUND JOBS | Unstarted | |
 | 34 | DOCKER / DEPLOYMENT REQUIREMENTS | Unstarted | |
