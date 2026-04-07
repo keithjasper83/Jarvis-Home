@@ -27,7 +27,7 @@ class JSONFormatter(logging.Formatter):
         for key in extra_keys:
             log_record[key] = record.__dict__[key]
 
-        return json.dumps(log_record, ensure_ascii=False)
+        return json.dumps(log_record, ensure_ascii=False, default=str)
 
 
 def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
