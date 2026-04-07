@@ -24,6 +24,3 @@ class Settings:
 def get_settings() -> Settings:
     """Returns a new instance of Settings, pulling current env vars."""
     return Settings()
-
-# Global default settings
-settings = get_settings()

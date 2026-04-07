@@ -3,6 +3,8 @@ import logging
 import datetime
 from typing import Any, Dict
 
+_STANDARD_LOG_KEYS = set(logging.makeLogRecord({}).__dict__.keys())
+
 class JSONFormatter(logging.Formatter):
     """
     Formatter that outputs JSON strings after parsing the LogRecord.
@@ -21,7 +23,7 @@ class JSONFormatter(logging.Formatter):
 
         # Include any extra keys added to the log record
         # (excluding standard LogRecord attributes)
-        extra_keys = set(record.__dict__.keys()) - set(logging.makeLogRecord({}).__dict__.keys())
+        extra_keys = set(record.__dict__.keys()) - _STANDARD_LOG_KEYS
         for key in extra_keys:
             log_record[key] = record.__dict__[key]
 
@@ -42,7 +44,7 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
-        # Prevent log messages from being propagated to the root logger
-        logger.propagate = False
+    # Prevent log messages from being propagated to the root logger
+    logger.propagate = False
 
     return logger

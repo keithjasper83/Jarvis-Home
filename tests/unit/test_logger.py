@@ -13,7 +13,7 @@ class TestLogger(unittest.TestCase):
         logger = get_logger("test_logger")
 
         # We need to replace the stream handler to write to our StringIO
-        for handler in logger.handlers:
+        for handler in list(logger.handlers):
             logger.removeHandler(handler)
 
         handler = logging.StreamHandler(log_stream)

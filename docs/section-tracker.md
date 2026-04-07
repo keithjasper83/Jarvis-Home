@@ -8,7 +8,7 @@
 | 4 | EXPLICITLY FORBIDDEN OR DISCOURAGED | Unstarted | |
 | 5 | CORE USER EXPERIENCE TARGET | Unstarted | |
 | 6 | SYSTEM ARCHITECTURE OBJECTIVE | Unstarted | |
-| 7 | RECOMMENDED PROJECT / PACKAGE STRUCTURE | Started | Scaffolding for recommended app and package boundaries complete. |
+| 7 | RECOMMENDED PROJECT / PACKAGE STRUCTURE | Started | Scaffolding for recommended app and package boundaries is complete. |
 | 8 | TECHNOLOGY CHOICES | Unstarted | |
 | 9 | UI / WEB INTERFACE REQUIREMENTS | Unstarted | |
 | 10 | REQUIRED PAGE MAP | Unstarted | |
