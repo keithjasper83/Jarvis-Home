@@ -1,8 +1,8 @@
-from typing import Optional
 from datetime import datetime
 
-# Placeholder schema file defining the database models
+# Stub schema file — NOT intended to be imported as runtime ORM models yet.
 # Entities: users, deployments, ui_overrides, devices, device_aliases, etc.
+# Full implementation will use SQLAlchemy / SQLModel.
 
 class DevicePlaceholder:
     id: str

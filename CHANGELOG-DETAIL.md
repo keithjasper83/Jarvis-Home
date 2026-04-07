@@ -29,3 +29,13 @@ This file contains a detailed engineering changelog of the project.
   - AI docs under `docs/ai/`
   - Tech docs under `docs/`
   - Placeholders: `apps/api/routes.py`, `apps/api/templates.py`, `infra/db/schema.py`.
+
+### Code Review Fixes (Copilot review 4070348423)
+- **Agent Responsible:** Copilot
+- **Purpose:** Address feedback from initial scaffolding PR review.
+- **Changes:**
+  - `scripts/parse_spec.py` (moved from repo root): added `encoding="utf-8"`, `ensure_ascii=False`; paths resolved relative to repo root via `pathlib`.
+  - `scripts/generate_section_tracker.py` (moved from repo root): added `encoding="utf-8"`, `newline="\n"`; paths resolved relative to repo root via `pathlib`.
+  - `infra/db/schema.py`: removed unused `Optional` import; updated comment to clarify stub status.
+  - `.gitignore`: added `parsed_sections.json` as a generated artifact.
+  - Removed `parse_spec.py`, `generate_section_tracker.py`, `parsed_sections.json` from repo root.
