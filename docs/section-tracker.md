@@ -27,8 +27,8 @@
 | 23 | TAPO AND SIMILAR DEVICE HANDLING | Unstarted | |
 | 24 | COMMAND EXECUTION ENGINE | Unstarted | |
 | 25 | AUTOMATION / SCENE / PLAN LAYER | Unstarted | |
-| 26 | DATABASE REQUIREMENTS | Unstarted | |
-| 27 | EXAMPLE DATABASE ENTITY DETAIL | Unstarted | |
+| 26 | DATABASE REQUIREMENTS | Started | Scaffolded core domain entities and Alembic migrations. |
+| 27 | EXAMPLE DATABASE ENTITY DETAIL | Started | Scaffolded Device, Capability, CommandExecution, and ConversationTurn tables. |
 | 28 | API DESIGN REQUIREMENTS | Unstarted | |
 | 29 | AUTHENTICATION / AUTHORIZATION | Unstarted | |
 | 30 | CONFIGURATION AND SECRETS | Started | Added tiered configuration model using Python dataclasses |

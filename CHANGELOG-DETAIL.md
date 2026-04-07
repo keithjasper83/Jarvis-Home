@@ -4,6 +4,17 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
+### Implementation Pass: Database Schema and Core Domain Models
+- **Agent Responsible:** Jules
+- **Purpose:** Implement the database foundation, Alembic migration environment, and initial core domain models as requested.
+- **Sections Addressed:** 26 (Database Requirements), 27 (Example Database Entity Detail).
+- **Files Created/Modified:**
+  - `infra/db/database.py` created for DB session lifecycle context manager and SQLAlchemy engine configuration.
+  - `infra/db/models/base.py` and `infra/db/models/core.py` created holding the declarative DB models.
+  - Initialized Alembic migrations located in `infra/db/alembic/` adjusting `env.py` for project configuration alignment.
+  - Handled the first auto-generated migration schema script.
+  - Generated unit/integration tests covering SQLAlchemy definitions matching basic CRUD usage (`tests/integration/test_db_models.py`).
+
 ### Implementation Pass: Repository Scaffolding Completion
 - **Agent Responsible:** Jules
 - **Purpose:** Stabilize remaining repository and package structures, configuration, and logging systems.

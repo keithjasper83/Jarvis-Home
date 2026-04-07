@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Initialized core database architecture utilizing SQLAlchemy 2.0.
+- Scaffolded Alembic migrations environment.
+- Added initial data models matching Section 27 (`devices`, `capabilities`, `command_executions`, `conversation_turns`).
 - Created missing directory structures and package definitions in `apps/` and `packages/` as described by Section 7.
 - Initialized configuration management system in `packages/configuration/settings.py` (Section 30).
 - Standardized logging system producing structured JSON in `packages/logging_audit/logger.py` (Section 31).
