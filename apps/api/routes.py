@@ -42,11 +42,16 @@ async def health_check():
 @app.get("/devices", response_class=HTMLResponse)
 async def devices_list(request: Request):
     """
-    Placeholder for Devices List (Section 10).
+    Devices List view (Section 10).
     """
+    mock_devices = [
+        {"id": "d1", "friendly_name": "Kitchen Sink Light", "host": "192.168.1.10", "room": "Kitchen", "device_type": "light", "health_state": "Online", "protocol": "http"},
+        {"id": "d2", "friendly_name": "Living Room TV", "host": "192.168.1.11", "room": "Living Room", "device_type": "tv", "health_state": "Online", "protocol": "ssh"},
+        {"id": "d3", "friendly_name": "Front Door Lock", "host": "192.168.1.12", "room": "Entry", "device_type": "switch", "health_state": "Offline", "protocol": "tapo"},
+    ]
     context = {
         "request": request,
-        "devices": []
+        "devices": mock_devices,
+        "current_year": 2026
     }
-    # Currently reusing base but this would map to a devices_list.html
-    return templates.TemplateResponse(request=request, name="base.html", context=context)
+    return templates.TemplateResponse(request=request, name="devices.html", context=context)

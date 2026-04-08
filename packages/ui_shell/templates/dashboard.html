@@ -4,44 +4,44 @@
 
 {% block content %}
 <div class="mb-8">
-    <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
-    <p class="mt-2 text-sm text-gray-600">System overview and quick actions.</p>
+    <h1 class="text-3xl font-bold text-white">Dashboard</h1>
+    <p class="mt-2 text-sm text-gray-400">System overview and quick actions.</p>
 </div>
 
 <!-- Grid Layout -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- System Health Summary Card -->
-    <div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-green-500">
+    <div class="bg-gray-800 overflow-hidden shadow-lg rounded-lg border-l-4 border-green-500 border border-gray-700">
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-sm font-medium text-gray-500 truncate">
+            <dt class="text-sm font-medium text-gray-400 truncate">
                 System Health
             </dt>
-            <dd class="mt-1 text-3xl font-semibold text-gray-900">
+            <dd class="mt-1 text-3xl font-semibold text-white">
                 {{ health_status | default('Online') }}
             </dd>
         </div>
     </div>
 
     <!-- Active Devices Card -->
-    <div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-blue-500">
+    <div class="bg-gray-800 overflow-hidden shadow-lg rounded-lg border-l-4 border-blue-500 border border-gray-700">
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-sm font-medium text-gray-500 truncate">
+            <dt class="text-sm font-medium text-gray-400 truncate">
                 Known Devices
             </dt>
-            <dd class="mt-1 text-3xl font-semibold text-gray-900">
+            <dd class="mt-1 text-3xl font-semibold text-white">
                 {{ device_count | default(0) }}
             </dd>
         </div>
     </div>
 
     <!-- Active Model Card -->
-    <div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-purple-500">
+    <div class="bg-gray-800 overflow-hidden shadow-lg rounded-lg border-l-4 border-purple-500 border border-gray-700">
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-sm font-medium text-gray-500 truncate">
+            <dt class="text-sm font-medium text-gray-400 truncate">
                 Active LLM Profile
             </dt>
-            <dd class="mt-1 text-xl font-semibold text-gray-900">
+            <dd class="mt-1 text-xl font-semibold text-white">
                 {{ active_model | default('Local Llama 3 8B') }}
             </dd>
         </div>
@@ -51,12 +51,12 @@
 
 <!-- Quick Actions -->
 <div class="mt-8">
-    <h2 class="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+    <h2 class="text-xl font-bold text-white mb-4">Quick Actions</h2>
     <div class="flex space-x-4">
-        <button hx-post="/api/v1/voice/test/speak" hx-swap="none" class="bg-primary text-white px-4 py-2 rounded shadow hover:bg-blue-800 transition">
+        <button hx-post="/api/v1/voice/test/speak" hx-swap="none" class="bg-primary text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition">
             Speak Test
         </button>
-        <button hx-get="/health" class="bg-gray-200 text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-300 transition">
+        <button hx-get="/health" class="bg-gray-700 text-gray-200 border border-gray-600 px-4 py-2 rounded shadow hover:bg-gray-600 transition">
             Run Health Check
         </button>
     </div>

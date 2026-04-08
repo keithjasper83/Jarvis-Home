@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Created the Dark Mode UI and expanded layout templates (`dashboard.html`, `devices.html`).
 - Setup FastAPI and Jinja2 routing foundation for the primary Web Interface (`apps/api/routes.py`).
 - Added foundational Tailwind+Jinja2 templates for the dashboard per Sections 9-11.
 - Created the `SshLocalAdapter` integrating Paramiko for secure shell interrogation and command execution.

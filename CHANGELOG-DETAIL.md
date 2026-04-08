@@ -4,6 +4,16 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
+### Implementation Pass: Dark Mode UI and Devices Layout
+- **Agent Responsible:** Jules
+- **Purpose:** Transition the user interface to dark mode to minimize eye strain and implement the Devices list layout.
+- **Sections Addressed:** 9, 10, 11 (UI Enhancements).
+- **Files Created/Modified:**
+  - `packages/ui_shell/templates/base.html` updated with Tailwind `dark` configuration logic.
+  - `packages/ui_shell/templates/dashboard.html` restyled for dark layouts.
+  - `packages/ui_shell/templates/devices.html` created implementing a full-page responsive table map for current known devices.
+  - `apps/api/routes.py` wired to pass mock dynamic elements to the newly created devices page layout.
+
 ### Implementation Pass: Foundational UI and Web Interface Routing
 - **Agent Responsible:** Jules
 - **Purpose:** Implement the foundational FastAPI endpoints mapping to the requested Page Map, and scaffold the Jinja2 HTML layout.

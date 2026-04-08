@@ -13,20 +13,21 @@
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e3a8a',
+                        primary: '#3b82f6', // Brighter blue for dark mode visibility
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-gray-900 text-gray-200 font-sans antialiased min-h-screen flex flex-col dark">
 
     <!-- Top Navigation -->
-    <header class="bg-primary text-white shadow-md">
+    <header class="bg-gray-800 text-white shadow-md border-b border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
@@ -34,16 +35,16 @@
                         <span class="font-bold text-xl tracking-tight">Jarvis Home</span>
                     </div>
                     <nav class="hidden md:ml-6 md:flex md:space-x-8">
-                        <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white text-sm font-medium">
+                        <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary hover:text-primary text-sm font-medium transition-colors">
                             Dashboard
                         </a>
-                        <a href="/devices" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white text-sm font-medium">
+                        <a href="/devices" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary hover:text-primary text-sm font-medium transition-colors">
                             Devices
                         </a>
-                        <a href="/capabilities" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white text-sm font-medium">
+                        <a href="/capabilities" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary hover:text-primary text-sm font-medium transition-colors">
                             Capabilities
                         </a>
-                        <a href="/health" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-white text-sm font-medium">
+                        <a href="/health" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary hover:text-primary text-sm font-medium transition-colors">
                             Health
                         </a>
                     </nav>
@@ -59,9 +60,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 mt-auto">
+    <footer class="bg-gray-800 border-t border-gray-700 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <p class="text-center text-sm text-gray-500">
+            <p class="text-center text-sm text-gray-400">
                 &copy; {{ current_year | default('2026') }} Jarvis Home System. Local-first automation.
             </p>
         </div>
