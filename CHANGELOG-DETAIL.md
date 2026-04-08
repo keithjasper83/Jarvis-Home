@@ -4,6 +4,16 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
+### Implementation Pass: HTTP Adapter and End-to-End Command Wiring
+- **Agent Responsible:** Jules
+- **Purpose:** Implement the first true protocol adapter (HTTP) and dynamically wire the execution engine to dispatch through the registry boundaries.
+- **Sections Addressed:** 20 (Device Adapter Model), 24 (Command Execution Engine).
+- **Files Created/Modified:**
+  - `packages/device_adapters_base/registry.py` created to manage active adapter singletons.
+  - `packages/device_adapters_http/adapter.py` created for local RESTful command execution mapping `HttpLocalAdapter`.
+  - `packages/capability_engine/execution.py` refactored to depend on `device_registry` and `adapter_registry` to resolve the actual target network host and protocol.
+  - Added new test modules `test_http_adapter.py` and `test_execution_wiring.py`.
+
 ### Implementation Pass: Rebuild Core Systems Slice
 - **Agent Responsible:** Jules
 - **Purpose:** Recover lost progress and unify the foundation by implementing the Database schemas, Capability Engine, Command Execution Engine, Device Registry, and Base Adapters into a single structured, coherent package slice.

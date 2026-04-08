@@ -4,6 +4,7 @@ from typing import Dict, Any, List, Optional
 from pydantic import BaseModel, Field
 from packages.capability_engine.registry import registry
 from packages.capability_engine.models import CapabilityDefinition
+from packages.device_adapters_base.registry import registry as default_adapter_registry
 
 class CommandExecutionResult(BaseModel):
     """
@@ -44,8 +45,10 @@ class CommandExecutionEngine:
     validating parameters against the definition, checking safety policies,
     and delegating to the appropriate device adapter.
     """
-    def __init__(self, capability_registry=registry):
+    def __init__(self, capability_registry=registry, device_registry=None, adapter_registry=default_adapter_registry):
         self.registry = capability_registry
+        self.device_registry = device_registry
+        self.adapter_registry = adapter_registry
 
     def execute_command(self, request: CommandRequest) -> CommandExecutionResult:
         """
@@ -84,12 +87,42 @@ class CommandExecutionEngine:
             if not request.target_device_ids:
                 raise ValueError("No target devices specified for execution.")
 
-            result.selected_adapter = "mock_adapter"
+            # 4. Resolve Targets & Select Adapter
+            # For simplicity, we process the first target device ID for the adapter selection right now.
+            target_id = request.target_device_ids[0]
 
-            # 5. Invoke Adapter (Mocked for now until adapters are implemented)
-            result.outcome = f"Executed {capability.name} successfully on {len(request.target_device_ids)} device(s)."
-            result.result_payload = {"state_mutated": True}
-            result.status = "success"
+            adapter_id = "mock_adapter"
+            host = target_id # Fallback if device not found in registry
+
+            if self.device_registry:
+                device = self.device_registry.get_device(target_id)
+                if not device:
+                    raise ValueError(f"Device not found: {target_id}")
+                # Prefer explicitly bound adapter, fallback to protocol name mapped to adapter ID
+                adapter_id = device.adapter_id or f"http.local" # default to http for now
+                host = device.host or target_id
+
+            adapter = self.adapter_registry.get(adapter_id)
+            if not adapter:
+                raise ValueError(f"No adapter registered for ID: {adapter_id}")
+
+            result.selected_adapter = adapter_id
+
+            # 5. Invoke Adapter
+            adapter_result = adapter.execute_command(
+                host=host,
+                capability_id=request.capability_id,
+                parameters=request.parameters
+            )
+
+            if adapter_result.success:
+                result.outcome = f"Executed {capability.name} successfully on {target_id}."
+                result.result_payload = adapter_result.payload
+                result.status = "success"
+            else:
+                result.outcome = f"Execution failed on {target_id}."
+                result.errors.append(adapter_result.error_message or "Unknown adapter error")
+                result.status = "failed"
 
         except Exception as e:
             result.status = "failed"

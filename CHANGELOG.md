@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Built the `HttpLocalAdapter` translating capability IDs into RESTful network requests (Section 20 & 24).
+- Wired the `CommandExecutionEngine` directly to the `DeviceRegistry` and `AdapterRegistry` for dynamic end-to-end execution.
 - Initialized core database architecture utilizing SQLAlchemy 2.0.
 - Scaffolded Alembic migrations environment.
 - Added initial data models matching Section 27 (`devices`, `capabilities`, `command_executions`, `conversation_turns`).
