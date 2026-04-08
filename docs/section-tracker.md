@@ -21,9 +21,9 @@
 | 17 | SHARED CAPABILITY MODEL | Started | Implemented base models (`CapabilityDefinition`, `SafetyLevel`, `ExecutionContract`) and an in-memory `CapabilityRegistry`. |
 | 18 | EXAMPLE DEVICE AND CAPABILITY FLOWS | Unstarted | |
 | 19 | DEVICE REGISTRY REQUIREMENTS | Started | Implemented `DeviceRegistry` class handling DB CRUD operations. |
-| 20 | DEVICE ADAPTER MODEL | Started | Implemented `BaseAdapter` abstract base class defining required execution contracts. |
+| 20 | DEVICE ADAPTER MODEL | Started | Implemented `BaseAdapter` and completed `HttpLocalAdapter` and `SshLocalAdapter`. |
 | 21 | DISCOVERY REQUIREMENTS | Unstarted | |
-| 22 | INTERROGATION REQUIREMENTS | Unstarted | |
+| 22 | INTERROGATION REQUIREMENTS | Started | Implemented `interrogate` functions on HTTP and SSH adapters mapping to basic banner and OS probes. |
 | 23 | TAPO AND SIMILAR DEVICE HANDLING | Unstarted | |
 | 24 | COMMAND EXECUTION ENGINE | Started | Implemented `CommandExecutionEngine` capable of resolving targets, validating parameters against schemas, and tracking lifecycle results. |
 | 25 | AUTOMATION / SCENE / PLAN LAYER | Unstarted | |

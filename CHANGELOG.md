@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Created the `SshLocalAdapter` integrating Paramiko for secure shell interrogation and command execution.
 - Built the `HttpLocalAdapter` translating capability IDs into RESTful network requests (Section 20 & 24).
 - Wired the `CommandExecutionEngine` directly to the `DeviceRegistry` and `AdapterRegistry` for dynamic end-to-end execution.
 - Initialized core database architecture utilizing SQLAlchemy 2.0.

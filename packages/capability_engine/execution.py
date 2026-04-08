@@ -91,16 +91,16 @@ class CommandExecutionEngine:
             # For simplicity, we process the first target device ID for the adapter selection right now.
             target_id = request.target_device_ids[0]
 
-            adapter_id = "mock_adapter"
-            host = target_id # Fallback if device not found in registry
+            if not self.device_registry:
+                raise ValueError("Device registry is required for resolving capabilities to physical targets.")
 
-            if self.device_registry:
-                device = self.device_registry.get_device(target_id)
-                if not device:
-                    raise ValueError(f"Device not found: {target_id}")
-                # Prefer explicitly bound adapter, fallback to protocol name mapped to adapter ID
-                adapter_id = device.adapter_id or f"http.local" # default to http for now
-                host = device.host or target_id
+            device = self.device_registry.get_device(target_id)
+            if not device:
+                raise ValueError(f"Device not found: {target_id}")
+
+            # Prefer explicitly bound adapter, fallback to protocol name mapped to adapter ID
+            adapter_id = device.adapter_id or f"http.local" # default to http for now
+            host = device.host or target_id
 
             adapter = self.adapter_registry.get(adapter_id)
             if not adapter:

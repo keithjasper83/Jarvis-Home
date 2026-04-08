@@ -4,6 +4,15 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
+### Implementation Pass: SSH Local Adapter and Interrogation
+- **Agent Responsible:** Jules
+- **Purpose:** Implement the SSH-based adapter fulfilling priority #6 requirements and supporting local device interrogation capabilities.
+- **Sections Addressed:** 20 (Device Adapter Model), 22 (Interrogation Requirements).
+- **Files Created/Modified:**
+  - `packages/device_adapters_ssh/adapter.py` created combining `paramiko` logic for execution and probing.
+  - `requirements.txt` updated to include `paramiko` + transitive dependencies.
+  - `tests/unit/test_ssh_adapter.py` capturing mocked connection logic and validation.
+
 ### Implementation Pass: HTTP Adapter and End-to-End Command Wiring
 - **Agent Responsible:** Jules
 - **Purpose:** Implement the first true protocol adapter (HTTP) and dynamically wire the execution engine to dispatch through the registry boundaries.
