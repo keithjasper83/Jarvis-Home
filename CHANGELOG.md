@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Review
+
+- Comprehensive review pass (2026-04-07) by Copilot Review Agent covering all 42 Master Spec sections.
+- Discovered and documented 30 open issues in `KNOWN-ISSUES.md` across infrastructure, database, API, UI, core packages, voice pipeline, testing, and documentation domains.
+- Populated `docs/ai/copilot-review-notes.md` with full review findings and recommended next steps.
+- 3/42 spec sections are in "Started" state; 0/42 are complete.
+
 ### Added
 - Created missing directory structures and package definitions in `apps/` and `packages/` as described by Section 7.
 - Initialized configuration management system in `packages/configuration/settings.py` (Section 30).

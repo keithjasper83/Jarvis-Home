@@ -4,6 +4,25 @@ This file contains a detailed engineering changelog of the project.
 
 ## [Unreleased]
 
+### Review Pass: Comprehensive Scaffolding Review (2026-04-07)
+- **Agent Responsible:** Copilot Review Agent
+- **Trigger:** "review progress and open issues as issues discovered"
+- **Sections Reviewed:** All 42
+- **Issues Documented:** 30 (see `KNOWN-ISSUES.md`)
+- **Files Updated:**
+  - `KNOWN-ISSUES.md` — populated with 30 structured issues (IDs INFRA-001 through TRACKER-001)
+  - `docs/ai/copilot-review-notes.md` — full review summary, compliance notes, and recommended next pass
+  - `CHANGELOG.md` — added review entry
+  - `CHANGELOG-DETAIL.md` — this entry
+- **Critical findings:**
+  - Docker infrastructure empty (INFRA-001, INFRA-002)
+  - No real ORM models or Alembic setup (DB-001, DB-002)
+  - Shared capability model absent (CORE-001)
+  - Core domain entities absent (CORE-007)
+  - All 20+ non-configuration/logging packages are empty stubs
+  - No Docker infrastructure, no UI templates, no voice pipeline, no device adapters
+
+
 ### Implementation Pass: Repository Scaffolding Completion
 - **Agent Responsible:** Jules
 - **Purpose:** Stabilize remaining repository and package structures, configuration, and logging systems.
