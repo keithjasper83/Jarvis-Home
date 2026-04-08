@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Setup FastAPI and Jinja2 routing foundation for the primary Web Interface (`apps/api/routes.py`).
+- Added foundational Tailwind+Jinja2 templates for the dashboard per Sections 9-11.
 - Created the `SshLocalAdapter` integrating Paramiko for secure shell interrogation and command execution.
 - Built the `HttpLocalAdapter` translating capability IDs into RESTful network requests (Section 20 & 24).
 - Wired the `CommandExecutionEngine` directly to the `DeviceRegistry` and `AdapterRegistry` for dynamic end-to-end execution.

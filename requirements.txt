@@ -4,3 +4,5 @@ pydantic
 alembic
 jinja2
 paramiko
+httpx
+uvicorn
